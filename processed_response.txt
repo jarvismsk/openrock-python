@@ -1,0 +1,5 @@
+Stock Code: itc
+Interval: 1minute
+From Date: 2023-09-07
+To Date: 2023-09-08
+Processed isec_stock_code: ITC
