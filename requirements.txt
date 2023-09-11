@@ -65,3 +65,5 @@ wsproto==1.2.0
 yarg==0.1.9
 yarl==1.9.2
 zstandard==0.19.0
+gunicorn
+charset-normalizer
