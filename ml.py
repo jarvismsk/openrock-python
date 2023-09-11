@@ -17,7 +17,6 @@ with open("processed_response.txt", "r") as f:
     from_date = lines[2].split(":")[1].strip()
     to_date = lines[3].split(":")[1].strip()
     processed_isec_stock_code = lines[4].split(":")[1].strip()
-
 # Convert from_date and to_date to datetime objects
 from_date = datetime.datetime.strptime(from_date, '%Y-%m-%d')
 to_date = datetime.datetime.strptime(to_date, '%Y-%m-%d')
