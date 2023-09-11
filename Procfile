@@ -1,1 +1,1 @@
-web: gunicorn automate_scripts:app --timeout 120
+worker: python automate_scripts.py

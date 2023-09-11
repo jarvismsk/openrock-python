@@ -3,11 +3,9 @@ import time
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 from subprocess import run
-from flask import Flask  # Import Flask
 
 # Path to the directory containing user_response.txt
 directory_to_watch = os.path.join(os.path.dirname(__file__))
-app = Flask(__name__)  # Create a Flask app
 
 class FileChangeHandler(FileSystemEventHandler):
     def on_modified(self, event):
