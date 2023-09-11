@@ -1,1 +1,1 @@
-web: python automate_scripts.py
+worker: python automate_scripts.py
