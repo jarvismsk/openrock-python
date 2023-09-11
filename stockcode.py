@@ -4,7 +4,7 @@ from breeze_connect import BreezeConnect
 breeze = BreezeConnect(api_key="z011318$623428Q9796rO8eg55os979*")
 
 # Generate session using the provided session key
-breeze.generate_session(api_secret="96N92`&y41K285Q8b(5+63UK3~140755", session_token="21074477")
+breeze.generate_session(api_secret="96N92`&y41K285Q8b(5+63UK3~140755", session_token="21181357")
 
 # Read the data from user_response.txt
 with open("user_response.txt", "r") as f:
