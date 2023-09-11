@@ -1,37 +1,34 @@
-import os
-from flask import Flask, request, jsonify
-import redis
 from breeze_connect import BreezeConnect
 
-app = Flask(__name__)
+# Set up connection using your App Key
+breeze = BreezeConnect(api_key="z011318$623428Q9796rO8eg55os979*")
 
-# Use Redis to retrieve data
-redis_client = redis.StrictRedis.from_url(os.environ.get("REDIS_URL"))
+# Generate session using the provided session key
+breeze.generate_session(api_secret="96N92`&y41K285Q8b(5+63UK3~140755", session_token="21209017")
 
-@app.route('/python-endpoint', methods=['POST'])
-def python_endpoint():
-    data = request.json
+# Read the data from user_response.txt
+with open("user_response.txt", "r") as f:
+    stock_code = f.readline().strip()  # Read stock code
+    interval = f.readline().strip()  # Read interval
+    from_date = f.readline().strip()  # Read from date
+    to_date = f.readline().strip()  # Read to date
 
-    # Process data here
+# Process the stock code
+exchange_code = 'NSE'
+response = breeze.get_names(exchange_code=exchange_code, stock_code=stock_code)
+isec_stock_code = response.get('isec_stock_code', '')
 
-    # Read the data from user_response.txt
-    with open("user_response.txt", "r") as f:
-        stock_code = f.readline().strip()  # Read stock code
-        interval = f.readline().strip()  # Read interval
-        from_date = f.readline().strip()  # Read from date
-        to_date = f.readline().strip()  # Read to date
+# Save the processed data to processed_response.txt
+with open("processed_response.txt", "w") as f:
+    f.write(f"Stock Code: {stock_code}\n")
+    f.write(f"Interval: {interval}\n")
+    f.write(f"From Date: {from_date}\n")
+    f.write(f"To Date: {to_date}\n")
+    f.write(f"Processed isec_stock_code: {isec_stock_code}\n")
 
-    # Process the stock code using BreezeConnect
-    exchange_code = 'NSE'
-    breeze = BreezeConnect(api_key="z011318$623428Q9796rO8eg55os979*")
-    breeze.generate_session(api_secret="96N92`&y41K285Q8b(5+63UK3~140755", session_token="21181357")
-    response = breeze.get_names(exchange_code=exchange_code, stock_code=stock_code)
-    isec_stock_code = response.get('isec_stock_code', '')
-
-    # Save the processed data to Redis
-    redis_client.set("processed_data", f"Stock Code: {stock_code}\nInterval: {interval}\nFrom Date: {from_date}\nTo Date: {to_date}\nProcessed isec_stock_code: {isec_stock_code}")
-
-    return jsonify({"message": "Data received and processed successfully"})
-
-if __name__ == "__main__":
-    app.run(debug=True)
+# Print the processed data
+print(f"Stock Code: {stock_code}")
+print(f"Interval: {interval}")
+print(f"From Date: {from_date}")
+print(f"To Date: {to_date}")
+print(f"Processed isec_stock_code: {isec_stock_code}")
