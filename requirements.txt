@@ -32,7 +32,7 @@ pip==23.1.2
 pipreqs==0.4.13
 platformdirs==3.10.0
 pluggy==1.0.0
-pycosat==0.6.4
+pycosat
 pycparser==2.21
 pyOpenSSL==23.0.0
 PySocks==1.7.1
