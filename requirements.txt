@@ -1,6 +1,6 @@
 aio_pika==9.2.2
 aioredis==2.0.1
-Cython==0.29.24  # Use this version of Cython
+Cython==0.29.24  # Add this specific version of Cython
 AppKit==0.2.8
 attr==0.3.2
 beautifulsoup4==4.12.2
