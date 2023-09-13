@@ -7,7 +7,7 @@ import datetime
 isec = BreezeConnect(api_key="z011318$623428Q9796rO8eg55os979*")
 
 # Generate session using the provided session key
-isec.generate_session(api_secret="96N92`&y41K285Q8b(5+63UK3~140755", session_token="21209017")
+isec.generate_session(api_secret="96N92`&y41K285Q8b(5+63UK3~140755", session_token="21485296")
 
 # Read the processed data from processed_response.txt
 with open("processed_response.txt", "r") as f:
