@@ -1,5 +1,5 @@
-from flask import Flask, request, jsonify
 import os
+from flask import Flask, request, jsonify
 from flask_cors import CORS
 import csv
 
@@ -70,5 +70,8 @@ def get_historical_data():
     else:
         return 'CSV file not found', 404
 
+# Get the PORT environment variable provided by Heroku or use 3001 as a default
+port = int(os.environ.get("PORT", 3001))
+
 if __name__ == '__main__':
-    app.run(port=3001)
+    app.run(port=port)
