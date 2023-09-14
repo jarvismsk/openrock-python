@@ -7,7 +7,7 @@ app = Flask(__name__)
 CORS(app)
 
 # Define allowed frontend origin(s)
-allowed_origins = ['https://livedata.vercel.app', 'http://localhost:3002']  # Add more if needed
+allowed_origins = ['https://livedata.vercel.app', 'http://localhost:3002', 'https://openrock.co.in']  # Add more if needed
 
 @app.route('/api/saveData', methods=['POST'])
 def save_data():

@@ -51,3 +51,10 @@ df = df.dropna(axis=1, how="all")
 # Save data as a CSV file
 df.to_csv(csv_file_path, index=False)
 print("CSV file created and data saved.")
+
+
+
+
+
+
+#  heroku ps:scale web=1 worker=1
