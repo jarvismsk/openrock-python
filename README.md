@@ -2,7 +2,7 @@
 
 ## Overview
 
-The OpenRock Python Project is part of the OpenRock initiative, which aims to provide open-source datasets and models for data science and machine learning enthusiasts. This Python project serves as a backend API for managing and retrieving data related to financial markets.
+The OpenRock Python Project is part of the OpenRock, which aims to provide open-source datasets and models for data science and machine learning enthusiasts. This Python project serves as a backend API for managing and retrieving data related to financial markets.
 
 ## Features
 
